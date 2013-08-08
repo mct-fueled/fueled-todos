@@ -1,0 +1,46 @@
+<head>
+  <title>Fueled Todo List</title>
+</head>
+
+<body>
+	{{#if currentUser }}
+		{{> todosHeader}}
+		{{> todos}}
+		{{> todosList}}
+	{{else}}
+		{{> user_loginform}}
+	{{/if}}
+</body>
+
+<template name="user_loginform">
+	<div class="form--sign-in">
+		<h3>DENIED!</h3>
+		<p>You have to sign in to use this app.</p>
+		{{ loginButtons }}
+	</div>
+</template>
+
+<template name="todosHeader">
+	<header>
+		Hello user
+	</header>
+</template>
+
+<template name="todos">
+	<section>
+		<ul>
+			<li>
+				<h3>Title</h3>
+				<em>Created by user</em>
+			</li>
+		</ul>
+	</section>
+</template>
+
+<template name="todosList">
+	<aside>
+		<ul>
+			<li>Lists</li>
+		</ul>
+	</aside>
+</template>
