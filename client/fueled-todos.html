@@ -22,19 +22,28 @@
 
 <template name="todosHeader">
 	<header>
-		Hello user
+		Hello {{ fullName }}
 	</header>
 </template>
 
 <template name="todos">
 	<section>
+		<form id="form--new-todo">
+			<input type="text" id="js--new-todo" placeholder="Enter a new todo item" />
+		</form>
 		<ul>
-			<li>
-				<h3>Title</h3>
-				<em>Created by user</em>
-			</li>
+			{{#each todos}}
+				<li>
+					{{> todo }}
+				</li>
+			{{/each}}
 		</ul>
 	</section>
+</template>
+
+<template name="todo">
+	<h3>Title</h3>
+	<em>Created by user</em>
 </template>
 
 <template name="todosList">
